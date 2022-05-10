@@ -1,0 +1,93 @@
+*{
+    background-color: #F3F5FC;
+}
+header{
+    width: 100%;
+    height: 90px;
+}
+
+.logo{
+    margin-top: 1.5em;
+    display: inline-block;
+}
+
+body{
+    height: 700px;
+}
+
+main{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content:space-between;
+}
+
+section{
+    width: 40%;
+    height: 100%;
+}
+
+.primera-pantalla{
+    width: 80%;
+    height: 100%;
+    margin-left: 3em;
+}
+
+textarea{
+    width: 90%;
+    height: 20em;
+    resize: none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.texto{
+    width: 80%;
+    height: 80%;
+    display: block;
+    margin: auto;
+}
+
+button{
+    margin-top: 1em;
+    padding: 1em 3em;
+    border-radius: 15px;
+    border-color: #0A3871;
+    cursor: pointer;
+}
+
+button:hover{
+    border: white;
+}
+
+#btn-codificar{
+    background-color: #0A3871;
+    color: white;
+}
+
+#btn-decodificar{
+    background-color: #D8DFE8;
+    color: #0A3871;
+}
+
+
+#btn-copiar{
+    background-color: #0A3871;
+    color: white;
+}
+
+footer{
+    width: 100%;
+    height: 3em;
+}
+
+footer p{
+    display: inline-block;
+}
+
+.logo-github{
+    width: 3em;
+    padding-left: 3em;
+}

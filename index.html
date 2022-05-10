@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+    <body>
+        <header>
+            <img src="imagenes/Logo.png" class="logo" alt="logo.png">
+        </header>
+        <main>
+            <!--ingreso texto-->
+            <section class="primera-pantalla">
+                <div >
+                    <textarea cols="30" rows="10" placeholder="Ingrese el texto..." class="texto-ingresado"></textarea>
+                </div>
+                <div>
+                    <span id="info">&#9432; No se codificará texto con mayúsculas ni acentos</span>
+                </div>
+                <div class="botones">
+                    <button id="btn-codificar">Codificar</button>
+                    <button id="btn-decodificar">Decodificar</button>
+                </div>
+            </section>
+            <!--salida texto-->
+            <section class="segunda-pantalla">
+                <div>
+                    <textarea cols="30" rows="10" placeholder="No se ha detectado texto..." class="texto-resultante"></textarea>
+                </div>
+                <div>
+                    <button id="btn-copiar">Copiar</button>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <a href="https://github.com/LeonardoBustosVallejos" target="_blank" ><img src="imagenes/logo-github.png" class="logo-github"></a>
+            <script src="js/codificador.js"></script>
+        </footer>
+    </body>
+</html>
