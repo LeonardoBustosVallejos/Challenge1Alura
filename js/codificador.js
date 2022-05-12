@@ -3,6 +3,7 @@ var decodificar = document.querySelector("#btn-decodificar");
 var copiar = document.querySelector("#btn-copiar");
 var texto = document.querySelector(".texto-ingresado");
 var resultado = document.querySelector(".texto-resultante");
+var mayusculas = false;
 
 
 /*eventos*/
@@ -13,7 +14,13 @@ codificar.addEventListener("click", function(){
     let textoEncriptado = encriptacion(texto.value);
     resultado.value = textoEncriptado;
     hayTexto(resultado.value);
-    return resultado.value;
+    verificadorMayusculas(texto.value);
+    if(mayusculas != true){
+        return resultado.value;
+    }else{
+        resultado.value = " ";
+        return alert("mayúscula detectada, por favor retire las mayúsculas de la frase o podrían presentarse errores");
+    }
 });
 
 //decodificar
@@ -26,12 +33,9 @@ decodificar.addEventListener("click", function(){
 
 //copiar
 copiar.addEventListener("click", function(){
-    resultado.select();
-    resultado.setSelectionRange(0,99999);
-    document.execCommand("copy");//execComand está en desuso, pendiente buscar una actualización
-    if(resultado){
+    navigator.clipboard.writeText(resultado.value).then(() =>{
         alert("texto copiado");
-    }
+    });
 });
 
 
@@ -44,6 +48,17 @@ function hayTexto(texto){
         alert("No se encuentra texto");
     }
 }
+
+function verificadorMayusculas(texto){
+    let aux = texto.toUpperCase();
+    let aux2 = aux.toLowerCase();
+    if(aux2 === texto){
+        mayusculas = false;
+    }else{
+        mayusculas = true;
+    }
+}
+
 function encriptacion(value){
     let encriptado = value.replace(/a|e|i|o|u/g, function(coincidencia){
         return reglaEncriptado[coincidencia];
