@@ -3,16 +3,21 @@
 }
 header{
     width: 100%;
-    height: 90px;
+    height: 6em;
+    display: flex;
+    justify-content: space-between;
 }
 
 .logo{
     margin-top: 1.5em;
-    display: inline-block;
+    display: inline-flex;
 }
 
-body{
-    height: 700px;
+.titulo{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 4em;
+    font-weight: bolder;
+    display: inline-flex;
 }
 
 main{
@@ -37,6 +42,7 @@ textarea{
     width: 90%;
     height: 20em;
     resize: none;
+    border: none;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 25px;
     border-radius: 10px;
@@ -71,7 +77,6 @@ button:hover{
     background-color: #D8DFE8;
     color: #0A3871;
 }
-
 
 #btn-copiar{
     background-color: #0A3871;
