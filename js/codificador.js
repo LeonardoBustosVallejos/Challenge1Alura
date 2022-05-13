@@ -19,7 +19,7 @@ codificar.addEventListener("click", function(){
         return resultado.value;
     }else{
         resultado.value = " ";
-        return alert("mayúscula detectada, por favor retire las mayúsculas de la frase o podrían presentarse errores");
+        return alert("mayúscula detectada, por favor retire las mayúsculas de la frase o podría presentarse errores");
     }
 });
 
@@ -34,7 +34,11 @@ decodificar.addEventListener("click", function(){
 //copiar
 copiar.addEventListener("click", function(){
     navigator.clipboard.writeText(resultado.value).then(() =>{
-        alert("texto copiado");
+        if(resultado.value = " "){
+            alert("No se encuentra texto, por favor ingrese uno")
+        }else{
+            alert("texto copiado");
+        }
     });
 });
 

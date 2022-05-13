@@ -39,21 +39,14 @@ section{
 }
 
 textarea{
-    width: 90%;
-    height: 20em;
+    width: 80%;
+    padding: 1em;
     resize: none;
     border: none;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 25px;
     border-radius: 10px;
     background-color: white;
-}
-
-.texto{
-    width: 80%;
-    height: 80%;
-    display: block;
-    margin: auto;
 }
 
 button{
@@ -88,11 +81,8 @@ footer{
     height: 3em;
 }
 
-footer p{
-    display: inline-block;
-}
-
 .logo-github{
     width: 3em;
     padding-left: 3em;
+    margin-top: 1em;
 }
