@@ -57,10 +57,6 @@ button{
     cursor: pointer;
 }
 
-button:hover{
-    border: white;
-}
-
 #btn-codificar{
     background-color: #0A3871;
     color: white;
@@ -69,6 +65,15 @@ button:hover{
 #btn-decodificar{
     background-color: #D8DFE8;
     color: #0A3871;
+}
+
+button:hover{
+    border: white;
+}
+
+#resultados-texto{
+    display: none;
+    width: 80%;
 }
 
 #btn-copiar{

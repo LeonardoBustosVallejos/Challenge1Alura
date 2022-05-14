@@ -1,7 +1,9 @@
+var texto = document.querySelector(".texto-ingresado");
 var codificar = document.querySelector("#btn-codificar");
 var decodificar = document.querySelector("#btn-decodificar");
 var copiar = document.querySelector("#btn-copiar");
-var texto = document.querySelector(".texto-ingresado");
+var bloqueImg = document.querySelector("#contenedor-img-munheco");
+var bloqueResultado = document.querySelector("#resultados-texto");
 var resultado = document.querySelector(".texto-resultante");
 var mayusculas = false;
 
@@ -15,10 +17,11 @@ codificar.addEventListener("click", function(){
     resultado.value = textoEncriptado;
     hayTexto(resultado.value);
     verificadorMayusculas(texto.value);
+    mostrarPantalla(bloqueResultado);
     if(mayusculas != true){
         return resultado.value;
     }else{
-        resultado.value = " ";
+        resultado.value = '';
         return alert("mayúscula detectada, por favor retire las mayúsculas de la frase o podría presentarse errores");
     }
 });
@@ -28,18 +31,16 @@ decodificar.addEventListener("click", function(){
     let textoDesencriptado = desencriptacion(texto.value);
     resultado.value = textoDesencriptado;
     hayTexto(resultado.value);
+    mostrarPantalla(bloqueResultado);
     return resultado.value;
 });
 
 //copiar
 copiar.addEventListener("click", function(){
-    navigator.clipboard.writeText(resultado.value).then(() =>{
-        if(resultado.value = " "){
-            alert("No se encuentra texto, por favor ingrese uno")
-        }else{
-            alert("texto copiado");
-        }
-    });
+    navigator.clipboard.writeText(resultado.value).then(() => {
+        alert("Frase copiada");
+        texto.value = '';
+    })
 });
 
 
@@ -75,6 +76,11 @@ function desencriptacion(value){
         return reglaDesencriptado[coincidencia];
     });
     return desencriptado;
+}
+
+function mostrarPantalla(pantalla){
+    pantalla.style.display = 'block';
+    bloqueImg.style.display = 'none';
 }
 
 
