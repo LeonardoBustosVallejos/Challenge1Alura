@@ -17,12 +17,13 @@ codificar.addEventListener("click", function(){
     resultado.value = textoEncriptado;
     hayTexto(resultado.value);
     verificadorMayusculas(texto.value);
+    verificadorAcentos(texto.value);
     mostrarPantalla(bloqueResultado);
     if(mayusculas != true){
         return resultado.value;
     }else{
         resultado.value = '';
-        return alert("mayúscula detectada, por favor retire las mayúsculas de la frase o podría presentarse errores");
+        return alert("Mayúscula detectada, por favor retire las mayúsculas de la frase o podría presentarse errores");
     }
 });
 
@@ -31,6 +32,8 @@ decodificar.addEventListener("click", function(){
     let textoDesencriptado = desencriptacion(texto.value);
     resultado.value = textoDesencriptado;
     hayTexto(resultado.value);
+    verificadorMayusculas(texto.value);
+    verificadorAcentos(texto.value);
     mostrarPantalla(bloqueResultado);
     return resultado.value;
 });
@@ -57,12 +60,23 @@ function hayTexto(texto){
 function verificadorMayusculas(texto){
     let aux = texto.toUpperCase();
     let aux2 = aux.toLowerCase();
+
     if(aux2 === texto){
         mayusculas = false;
     }else{
         mayusculas = true;
     }
 }
+
+function verificadorAcentos(texto){
+    let posicion = texto.search(/á|é|í|ó|ú/g);
+    if(posicion != -1){
+        alert("Hay un acento. El codificador no procesa acentos, por favor reingrese la frase");
+        resultado.value = '';
+    }
+}
+
+
 
 function encriptacion(value){
     let encriptado = value.replace(/a|e|i|o|u/g, function(coincidencia){
